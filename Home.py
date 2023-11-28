@@ -23,7 +23,7 @@ def main():
     #    raise Exception("Couldn't connect to database")
 
     st.set_page_config(
-        page_title="Stock Info App (Home)",
+        page_title="DBAS1007 Form",
     )
 
     st.title("Favourite Movie Form")
