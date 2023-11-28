@@ -2,3 +2,4 @@ venv
 dexterQuery.sql
 .streamlit/secrets.toml
 __pycache__
+mssqq_user.txt

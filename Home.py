@@ -1,29 +1,33 @@
 # This form will be for the DBAS1007 final project
 
 import streamlit as st
-from createDB import connectDB, insertIntoDB
+# from createDB import connectDB, insertIntoDB
 
 
 def setToNone(inputDict: dict) -> dict:
     for key in inputDict.keys():
-        if (inputDict[key] == ''):
+        if (type(inputDict[key]) == str and len(inputDict[key]) == 0):
             return None
+        elif (type(inputDict[key]) == int and inputDict[key] == 0):
+            return None
+
+    return inputDict
 
 
 def main():
-    try:
-        conn, c = connectDB(
-            st.secrets["DRIVER_NAME"], st.secrets["SERVER_NAME"], st.secrets["DATABASE"])
-        print("Connected to database")
-    except:
-        raise Exception("Couldn't connect to database")
+
+    # try:
+    #    conn, c = connectDB()
+    #    print("Connected to database")
+    # except:
+    #    raise Exception("Couldn't connect to database")
 
     st.set_page_config(
         page_title="Stock Info App (Home)",
     )
 
     st.title("Favourite Movie Form")
-    st.subheader("Test")
+    st.subheader("By: Jared, Dexter, and Chenyoung")
 
     with st.form(key="myForm"):
         st.subheader("About You")
@@ -108,10 +112,10 @@ def main():
             movie = setToNone(movie)
             user = setToNone(user)
 
-            if (movie != None and user != None):
-                insertIntoDB(conn, c, movie, user)
-            else:
-                st.error("The form was not filled out completly")
+            # if (movie != None and user != None):
+            #    insertIntoDB(conn, c, movie, user)
+            # else:
+            #    st.error("The form was not filled out completly")
 
 
 if __name__ == "__main__":

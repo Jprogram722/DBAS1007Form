@@ -2,6 +2,10 @@
 
 import pyodbc as odbc
 
+DRIVER_NAME = 'ODBC Driver 17 for SQL Server'
+SERVER_NAME = 'DESKTOP-GOHSKPL'
+DATABASE = 'FavMovie'
+
 
 def getID(cursor: odbc.Cursor, movies: dict):
     director_id = cursor.execute(
@@ -48,11 +52,11 @@ def getID(cursor: odbc.Cursor, movies: dict):
     return idDictionary
 
 
-def connectDB(driver: str, server: str, database: str):
+def connectDB():
     conn_string = f"""
-        Driver={{{driver}}};
-        SERVER={{{server}}};
-        DATABASE={{{database}}};
+        Driver={{{DRIVER_NAME}}};
+        SERVER={{{SERVER_NAME}}};
+        DATABASE={{{DATABASE}}};
         Trusted_Connection=yes;
     """
 
