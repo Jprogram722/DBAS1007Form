@@ -54,13 +54,15 @@ def main():
         movie_title = st.text_input(
             label="Movie Title"
         )
-        movie_genre = st.text_input(
-            label="Movie Genre"
-        )
         movie_year = st.number_input(
             label="Movie Release Year",
             step=1
         )
+        st.subheader("Movies Genre")
+        movie_genre = st.text_input(
+            label="Movie Genre"
+        )
+        st.subheader("Studio Info")
         movie_studio = st.text_input(
             label="Who Produced The Movie"
         )
@@ -68,7 +70,7 @@ def main():
             label="Where Was The Movie Produced"
         )
         col_leadf, col_leadL = st.columns(2)
-
+        st.subheader("Lead actor and Director")
         with col_leadf:
             movie_leadf = st.text_input(
                 label="Lead Actors First Name"
