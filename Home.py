@@ -27,7 +27,6 @@ def main():
     )
 
     st.title("Favourite Movie Form")
-    st.subheader("By: Jared, Dexter, and Chenyoung")
 
     with st.form(key="myForm"):
         st.subheader("About You")
