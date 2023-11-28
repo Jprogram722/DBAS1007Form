@@ -69,8 +69,8 @@ def main():
         movie_location = st.text_input(
             label="Where Was The Movie Produced"
         )
-        col_leadf, col_leadL = st.columns(2)
         st.subheader("Lead actor and Director")
+        col_leadf, col_leadL = st.columns(2)
         with col_leadf:
             movie_leadf = st.text_input(
                 label="Lead Actors First Name"
